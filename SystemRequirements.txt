@@ -1,25 +1,67 @@
 Text	Package	Notes
+Bash		Ignored
 bcl2Fastq		I'm not sure we can redistribute bcl2fastq.
 bowtie	bowtie2	I assume this is actually bowtie2, but this should be specified.
+C++ software package Random Jungle		
 C++11		Ignored
-Cytoscape (>= 3.6.1) (if used for visualization of results, heavily suggested)
+clustalo	clustalo	
+cwltool (>= 1.0.2018)	cwltool	
+CyREST (>= 3.8.0)		Need to add this to conda
+Cytoscape (>= 3.3.0)	cytoscape	
+Cytoscape (>= 3.6.1) (if used for visualization of results, heavily suggested)		If it's only suggested then it's not a system requirement
 egrep	grep	
-GLPK (>= 4.42)	glpk
+Ensembl VEP (API version 96)	ensembl-vep	
+GEOS (>= 3.2.0)	geos	
+GLPK (>= 4.42)	glpk	
 GNU make		Ignored
+GNU Scientific Library >= 1.6	gsl	
+graphviz	graphviz	
 Graphviz version >= 2.2	graphviz	
+gs	ghostscript	
 gsl	gsl
+GSL (GNU Scientific Library)	gsl	
+Gzip		Unclear if it needs the binary or zlib. Ignored in the former case.
 h5py	h5py
+ImageMagick	imagemagick	
+Internal files Xba.CQV, Xba.regions (or other regions file)		I have no idea
+JAGS 4.x.y	jags	What is up with "4.x.y"?
 Java (>= 1.8)	openjdk 8.*	Needs to be compatible with what rJava is built against.
 Java version >= 1.7	openjdk 8.*	Needs to be compatible with what rJava is built against.
+Java (>= 8)	openjdk 8.*	Needs to be compatible with what rJava is built against.
+jQuery, jQueryUI, qTip2, D3js and Raphael are made available...		Ignored, don't seem to be actual requirements
+liblapack-dev   # liblapack?
+libxml2	libxml2
+libSBML (>= 5.5)	python-libsbml	
+libsbml (==5.10.2)	python-libsbml	
+MAFFT (>= 7.305)	mafft	
+MELTING (>= 5.1.1)	melting	Need to add to conda
+mofapy	mofapy	
+Netpbm		Need to add to conda
+None		Ignored
 numpy	numpy	
+OligoArrayAux (>= 3.8)		Need to add to conda
 OpenBabel (>= 2.3.1) with headers (http://openbabel.org). are needed by the recipe for the package to work as intended.	openbabel	
+OpenMP	llvm-openmp	Only needed on OSX
+optionally Graphviz (>= 2.16)	graphviz	Shouldn't be listed
 pandas	pandas
 pandoc	pandoc
 Perl	perl
+Perl modules DBI and DBD::mysql must be installed.	perl-dbi	
+Perl modules DBI and DBD::mysql must be installed.	perl-dbd-mysql
 python (>= 2.7)	python
+python (< 3.7)	python	
+Rcpp		Should not be there
+RNASeqR only support Linux and macOS. Window is not supported. Python2 is highly recommended. If your machine is Python3, make sure '2to3' command is available.	python	They need to just say "python" and update their package.
+root_v5.34.36	root5	
+rTANDEM uses expat and pthread libraries. See the README file for details.	expat	
 Rtools (>= 3.1)		Ignored
 samtools	samtools	A version range should be specified, since samtool syntax has changed over time. Also, why doesn't this use rsamtools?
 sklearn	sklearn
 STAR	star
+systemPipeR can be used to run external command-line software (e.g. short read aligners), but the corresponding tool needs to be installed on a system.		Who knows what this even means
+tensorflow	tensorflow	
 TopHat	tophat2
+Unix		Ignored
+ViennaRNA (>= 2.4.1)	viennarna	
 xml2	xml2	Pulled in by r-xml
+<not required>		Why would this even be filled in? This should be caught during review.
