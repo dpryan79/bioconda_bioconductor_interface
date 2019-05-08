@@ -1,0 +1,25 @@
+Text	Package	Notes
+bcl2Fastq		I'm not sure we can redistribute bcl2fastq.
+bowtie	bowtie2	I assume this is actually bowtie2, but this should be specified.
+C++11		Ignored
+Cytoscape (>= 3.6.1) (if used for visualization of results, heavily suggested)
+egrep	grep	
+GLPK (>= 4.42)	glpk
+GNU make		Ignored
+Graphviz version >= 2.2	graphviz	
+gsl	gsl
+h5py	h5py
+Java (>= 1.8)	openjdk 8.*	Needs to be compatible with what rJava is built against.
+Java version >= 1.7	openjdk 8.*	Needs to be compatible with what rJava is built against.
+numpy	numpy	
+OpenBabel (>= 2.3.1) with headers (http://openbabel.org). are needed by the recipe for the package to work as intended.	openbabel	
+pandas	pandas
+pandoc	pandoc
+Perl	perl
+python (>= 2.7)	python
+Rtools (>= 3.1)		Ignored
+samtools	samtools	A version range should be specified, since samtool syntax has changed over time. Also, why doesn't this use rsamtools?
+sklearn	sklearn
+STAR	star
+TopHat	tophat2
+xml2	xml2	Pulled in by r-xml
