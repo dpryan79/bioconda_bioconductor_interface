@@ -33,3 +33,8 @@ This are contained in [PackageNotes.md](PackageNotes.md).
 # System Requirements
 
 A running list of system requirements in tabular form is in [SystemRequirements.txt](SystemRequirements.txt). The first column contains the text from the `SystemRequirements` field in the VIEWS files. Unfortunately this is unstructured at the moment and also not always correct (see the per-package notes). In the future this should be replaced by something machine parsable. Additional fields are (1) the associated conda package and (2) any notes from me.
+
+
+# Skeleton changes
+
+Often CFLAGS and LDFLAGS aren't honored by packages, even when put into Makevars. We need to assess (A) how wide-spread this is and (B) come up with a mitigation solution together with bioconductor/core.

@@ -12,4 +12,8 @@ This package is almost never able to find its source code.
 
 # Rhtslib
 
-This requires lzma headers and should therefore have `xz` or something like that in `SystemRequirements`.
+This requires bz2, lzma and zlib and should therefore have `bzip2`, `xz` and `zlib` or something like that in `SystemRequirements`. This does not respect the CFLAGS or LDFLAGS environment variables or when they're put in Makevars.
+
+# Rbowtie2
+
+This requires zlib, so should specify `zlib` in the `SystemRequirements`.
