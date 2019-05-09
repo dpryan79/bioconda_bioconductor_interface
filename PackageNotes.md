@@ -21,3 +21,7 @@ This requires bz2, lzma and zlib and should therefore have `bzip2`, `xz` and `zl
 # Rbowtie2
 
 This requires zlib, so should specify `zlib` in the `SystemRequirements`.
+
+# NetPathMiner
+
+Libsbml2 (python-libsbml) is only available for Linux for some reason, so this package can only be built for Linux.
