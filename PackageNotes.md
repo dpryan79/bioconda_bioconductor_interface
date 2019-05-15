@@ -14,14 +14,29 @@ This package is almost never able to find its source code.
 
 Allegedly needs blat and a 2bit of hg18, which may be true for some example, but seems unlikely for normal use. Perhaps just blat?
 
-# Rhtslib
+# lpsymphony
 
-This requires bz2, lzma and zlib and should therefore have `bzip2`, `xz` and `zlib` or something like that in `SystemRequirements`. This does not respect the CFLAGS or LDFLAGS environment variables or when they're put in Makevars.
+For some reason, the package enforces using `-T` while linking, which breaks things on OSX with clang.
+
+# NetPathMiner
+
+Libsbml2 (python-libsbml) is only available for Linux for some reason, so this package can only be built for Linux.
 
 # Rbowtie2
 
 This requires zlib, so should specify `zlib` in the `SystemRequirements`.
 
-# NetPathMiner
+This does not pass CXXFLAGS through to the make file, so one needs to modify the CXX variable in Makevars:
 
-Libsbml2 (python-libsbml) is only available for Linux for some reason, so this package can only be built for Linux.
+    echo -e "CC=$CC
+    FC=$FC
+    CFLAGS=$CFLAGS
+    CXXFLAGS=$CXXFLAGS
+    CXX=$CXX -I${PREFIX}/include -L${PREFIX}/lib
+    CXX98=$CXX
+    CXX11=$CXX
+    CXX14=$CXX" > ~/.R/Makevars
+
+# Rhtslib
+
+This requires bz2, lzma and zlib and should therefore have `bzip2`, `xz` and `zlib` or something like that in `SystemRequirements`. This does not respect the CFLAGS or LDFLAGS environment variables or when they're put in Makevars.
