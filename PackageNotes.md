@@ -18,10 +18,6 @@ Allegedly needs blat and a 2bit of hg18, which may be true for some example, but
 
 For some reason, the package enforces using `-T` while linking, which breaks things on OSX with clang.
 
-# NetPathMiner
-
-Libsbml2 (python-libsbml) is only available for Linux for some reason, so this package can only be built for Linux.
-
 # Rbowtie2
 
 This requires zlib, so should specify `zlib` in the `SystemRequirements`.
@@ -39,4 +35,8 @@ This does not pass CXXFLAGS through to the make file, so one needs to modify the
 
 # Rhtslib
 
-This requires bz2, lzma and zlib and should therefore have `bzip2`, `xz` and `zlib` or something like that in `SystemRequirements`. This does not respect the CFLAGS or LDFLAGS environment variables or when they're put in Makevars.
+This requires bz2, lzma and zlib and should therefore have `bzip2`, `xz` and `zlib` or something like that in `SystemRequirements`. This does not respect the CFLAGS or LDFLAGS environment variables or when they're put in Makevars. The solution to that is to do the following before calling `R CMD INSTALL`:
+
+    pushd src/htslib-1.7
+    make CC="${CC}" CFLAGS="${CFLAGS}" LDFLAGS="-L${PREFIX}/lib"
+    popd
