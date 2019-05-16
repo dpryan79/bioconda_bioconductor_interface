@@ -4,7 +4,10 @@ This package is marked in `SystemRequirements` as needing `GNU make` and `C++11`
 
 # GLAD
 
-This package is almost never able to find its source code.
+This package isn't able to find its source code, since it's looking for a file called `GLAD`. In bioconda it's also getting the wrong flags for gsl for some reason. The solution is to use the following in the build script:
+
+    sed -i.bak 's/^ac_unique_file="GLAD"/ac_unique_file="NAMESPACE"/' configure
+    $R CMD INSTALL --build --configure-vars='GSL_LIBS="-L$PREFIX/lib -lgsl -lgslcblas -lm"' .
 
 # HilbertVisGUI
 
