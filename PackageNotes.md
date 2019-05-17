@@ -43,3 +43,7 @@ This requires bz2, lzma and zlib and should therefore have `bzip2`, `xz` and `zl
     pushd src/htslib-1.7
     make CC="${CC}" CFLAGS="${CFLAGS}" LDFLAGS="-L${PREFIX}/lib"
     popd
+
+# tofsims
+
+It's not listed as a system requirement, but this requirs liblapack, which comes from (open)blas.
