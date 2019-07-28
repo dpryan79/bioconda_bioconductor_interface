@@ -25,6 +25,12 @@ We (bioconda) are not currently checking for `PackageStatus: Deprecated` in VIEW
  - flowQ (deprecated)
  - ProCoNA (deprecated)
  - PGPC (deprecated)
+ 
+# Packages that don't compile for anyone
+
+Bioconductor can't even get these to compile on their build system
+
+ - mlm4omics
 
 # Per-package notes
 
