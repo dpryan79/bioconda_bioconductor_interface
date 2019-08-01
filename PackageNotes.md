@@ -9,6 +9,26 @@ This package isn't able to find its source code, since it's looking for a file c
     sed -i.bak 's/^ac_unique_file="GLAD"/ac_unique_file="NAMESPACE"/' configure
     $R CMD INSTALL --build --configure-vars='GSL_LIBS="-L$PREFIX/lib -lgsl -lgslcblas -lm"' .
 
+# graph
+
+This is currently the lone conda-specific issue. The recipe renames a dynamic library and that seems to confuse conda. The fix is the following patch:
+
+    diff --git a/src/Makevars b/src/Makevars
+    index 5ddfd10..77759f9 100644
+    --- src/Makevars
+    +++ src/Makevars
+    @@ -1,6 +1,6 @@
+     after: $(SHLIB)
+    -       mv $(SHLIB) BioC_graph$(SHLIB_EXT)
+    -
+    +       cp $(SHLIB) BioC_graph$(SHLIB_EXT)
+    +#
+     # By default, 'R CMD build' won't remove that file so it will end up in the
+     # source tarball (observed with R 2.12.0).
+     clean:
+
+This is likely an obscure conda bug, so there's no issue that needs reporting upstream.
+
 # HilbertVisGUI
 
 `gtkmm 2.4` is not likely to be installable in docker containers in the foreseeable future. It's assumed that it will be present on systems already. Consequently, this package will likely always be skipped.
