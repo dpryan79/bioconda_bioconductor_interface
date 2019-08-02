@@ -2,6 +2,10 @@
 
 This package is marked in `SystemRequirements` as needing `GNU make` and `C++11`. We ignore `C++11` regardless, but as this package only contains headers it has no actual requirements.
 
+# CoGAPS
+
+Like GLAD, this can't find its source code if you run `R CMD INSTALL` inside the source directory. So a simple `touch CoGAPS` before installing should fix things.
+
 # GLAD
 
 This package isn't able to find its source code, since it's looking for a file called `GLAD`. In bioconda it's also getting the wrong flags for gsl for some reason. The solution is to use the following in the build script:
