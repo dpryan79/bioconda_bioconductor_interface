@@ -45,6 +45,24 @@ Allegedly needs blat and a 2bit of hg18, which may be true for some example, but
 
 For some reason, the package enforces using `-T` while linking, which breaks things on OSX with clang.
 
+# PureCN
+
+There are a number of R scripts that need to have the R path manually set. This can be done in `build.sh` as follows:
+
+    extdata=$PREFIX/lib/R/library/PureCN/extdata
+    mkdir -p $PREFIX/bin
+
+    for f in Coverage.R Dx.R FilterCallableLoci.R IntervalFile.R NormalDB.R
+    do
+      perl -pi -e 'print "#!/opt/anaconda1anaconda2anaconda3/bin/Rscript\n" if $. == 1' $extdata/$f
+      ln -s $extdata/$S $PREFIX/bin/PureCN_${f}
+    done
+
+    perl -pi -e 'print "#!/opt/anaconda1anaconda2anaconda3/bin/Rscript\n" if $. == 1' $extdata/PureCN.R
+    ln -s $extdata/PureCN.R $PREFIX/bin/PureCN.R
+
+This could likely be done in `meta.yaml` instead.
+
 # Rbowtie2
 
 This requires zlib, so should specify `zlib` in the `SystemRequirements`.
