@@ -13,6 +13,14 @@ This package isn't able to find its source code, since it's looking for a file c
     sed -i.bak 's/^ac_unique_file="GLAD"/ac_unique_file="NAMESPACE"/' configure
     $R CMD INSTALL --build --configure-vars='GSL_LIBS="-L$PREFIX/lib -lgsl -lgslcblas -lm"' .
 
+# gmapR
+
+This is being caught up by the change on OSX to .dylib as a shared library extension. The fix is to simply add this to `build.sh`:
+
+    if [[ "$OSTYPE" == "darwin"* ]]; then
+        sed -i.bak 's/gmapR.so/gmapR.dylib/' src/Makefile
+    fi
+
 # graph
 
 This is currently the lone conda-specific issue. The recipe renames a dynamic library and that seems to confuse conda. The fix is the following patch:
