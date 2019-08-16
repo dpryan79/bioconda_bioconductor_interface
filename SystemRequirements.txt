@@ -56,7 +56,7 @@ root_v5.34.36	root5
 rTANDEM uses expat and pthread libraries. See the README file for details.	expat	
 Rtools (>= 3.1)		Ignored
 samtools	samtools	A version range should be specified, since samtool syntax has changed over time. Also, why doesn't this use rsamtools?
-sklearn	sklearn
+sklearn	scikit-learn
 STAR	star
 systemPipeR can be used to run external command-line software (e.g. short read aligners), but the corresponding tool needs to be installed on a system.		Who knows what this even means
 tensorflow	tensorflow	
