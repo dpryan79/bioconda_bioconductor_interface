@@ -11,6 +11,7 @@ Cytoscape (>= 3.3.0)	cytoscape
 Cytoscape (>= 3.6.1) (if used for visualization of results, heavily suggested)		If it's only suggested then it's not a system requirement
 egrep	grep	
 Ensembl VEP (API version 96)	ensembl-vep	
+expat expat 
 GEOS (>= 3.2.0)	geos	
 GLPK (>= 4.42)	glpk	
 GNU make		Ignored
