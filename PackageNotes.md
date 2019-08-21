@@ -51,7 +51,10 @@ Allegedly needs blat and a 2bit of hg18, which may be true for some example, but
 
 # lpsymphony
 
-For some reason, the package enforces using `-T` while linking, which breaks things on OSX with clang.
+For some reason, the package enforces using `-TP` while linking, which breaks things on OSX with clang. Adding the following to build.sh fixes that:
+
+    sed -i.bak "s/-TP//" src/SYMPHONY/SYMPHONY/configure.ac
+    sed -i.bak "s/-TP//" src/SYMPHONY/SYMPHONY/configure
 
 # PureCN
 
