@@ -15,11 +15,7 @@ This package isn't able to find its source code, since it's looking for a file c
 
 # gmapR
 
-This is being caught up by the change on OSX to .dylib as a shared library extension. The fix is to simply add this to `build.sh`:
-
-    if [[ "$OSTYPE" == "darwin"* ]]; then
-        sed -i.bak 's/gmapR.so/gmapR.dylib/' src/Makefile
-    fi
+This is being caught up by the change on OSX to .dylib as a shared library extension. 
 
 # graph
 
