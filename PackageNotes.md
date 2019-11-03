@@ -93,6 +93,10 @@ This requires bz2, lzma and zlib and should therefore have `bzip2`, `xz` and `zl
     make CC="${CC}" CFLAGS="${CFLAGS}" LDFLAGS="-L${PREFIX}/lib"
     popd
 
+# SICtools
+
+This requires zlib.
+
 # tofsims
 
 It's not listed as a system requirement, but this requirs liblapack, which comes from (open)blas.
