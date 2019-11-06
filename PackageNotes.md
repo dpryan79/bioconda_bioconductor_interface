@@ -7,7 +7,7 @@ This package isn't able to find its source code, since it's looking for a file c
 
 # gmapR
 
-This is being caught up by the change on OSX to .dylib as a shared library extension. 
+This is being caught up by the change on OSX to .dylib as a shared library extension. Resolving this still produces errors on OSX where the library can't be loaded due to missing `_bam_aux2A` in the shared library.
 
 # graph
 
@@ -43,6 +43,14 @@ For some reason, the package enforces using `-TP` while linking, which breaks th
 
     sed -i.bak "s/-TP//" src/SYMPHONY/SYMPHONY/configure.ac
     sed -i.bak "s/-TP//" src/SYMPHONY/SYMPHONY/configure
+
+# OncoSimulR
+
+On OSX the following needs to be done to handle the dylib issue:
+
+    if [[ $OSTYPE == "darwin"* ]]; then
+      sed -i.bak "s/OncoSimulR.so/OncoSimulR.dylib/g" src/install.libs.R
+    fi
 
 # PureCN
 
