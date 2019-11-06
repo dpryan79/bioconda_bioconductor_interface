@@ -1,16 +1,8 @@
-# cytolib
-
-This package is marked in `SystemRequirements` as needing `GNU make` and `C++11`. We ignore `C++11` regardless, but as this package only contains headers it has no actual requirements.
-
-# CoGAPS
-
-Like GLAD, this can't find its source code if you run `R CMD INSTALL` inside the source directory. So a simple `touch CoGAPS` before installing should fix things.
-
 # GLAD
 
 This package isn't able to find its source code, since it's looking for a file called `GLAD`. In bioconda it's also getting the wrong flags for gsl for some reason. The solution is to use the following in the build script:
 
-    sed -i.bak 's/^ac_unique_file="GLAD"/ac_unique_file="NAMESPACE"/' configure
+    touch GLAD
     $R CMD INSTALL --build --configure-vars='GSL_LIBS="-L$PREFIX/lib -lgsl -lgslcblas -lm"' .
 
 # gmapR
@@ -96,7 +88,3 @@ This requires bz2, lzma and zlib and should therefore have `bzip2`, `xz` and `zl
 # SICtools
 
 This requires zlib.
-
-# tofsims
-
-It's not listed as a system requirement, but this requirs liblapack, which comes from (open)blas.
