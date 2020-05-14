@@ -27,7 +27,6 @@ This is currently the lone conda-specific issue. The recipe renames a dynamic li
      # source tarball (observed with R 2.12.0).
      clean:
 
-This is likely an obscure conda bug, so there's no issue that needs reporting upstream.
 
 # HilbertVisGUI
 
