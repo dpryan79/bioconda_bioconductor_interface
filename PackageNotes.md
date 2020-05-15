@@ -84,6 +84,12 @@ This does not pass CXXFLAGS through to the make file, so one needs to modify the
     CXX11=$CXX
     CXX14=$CXX" > ~/.R/Makevars
 
+# rprotobuflib
+
+This requires zlib and also a modified `build.sh` with:
+
+    $R CMD INSTALL --build . --configure-vars="CC_FOR_BUILD=$CC CXX_FOR_BUILD=$CXX"
+
 # Rhtslib
 
 This requires bz2, lzma and zlib and should therefore have `bzip2`, `xz` and `zlib` or something like that in `SystemRequirements`. This does not respect the CFLAGS or LDFLAGS environment variables or when they're put in Makevars. The solution to that is to do the following before calling `R CMD INSTALL`:
